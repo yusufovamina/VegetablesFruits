@@ -9,7 +9,17 @@
       Title="Page1">
 
     <Grid Background="#FFCCFBE5">
-        <DataGrid Name="TableGrid" Margin="428,0,0,0" Background="#FFB9E2C7"/>
+        <DataGrid Name="TableGrid" Margin="522,0,0,0" Background="#FFB9E2C7"/>
+        <Button Content="See all" Name="SeeAll" Margin="10,10,0,0" Height="50" Width="130" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" Background="#FFECFF85" Click="SeeAll_Click"/>
+        <Button Content="See names" Name="SeeNames" Margin="158,10,0,0" Height="50" Width="130" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" Background="#FFECFF85" Click="SeeNames_Click"/>
+        <Button Content="See colors" Name="SeeColors" Margin="300,10,0,0" Height="50" Width="130" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" Background="#FFECFF85" Click="SeeColors_Click" RenderTransformOrigin="1.043,0.556"/>
+        <Button Content="See max calories" Name="SeeMaxCal" Margin="10,99,0,0" Height="50" Width="130" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top"  FontSize="15" Background="#FFECFF85" Click="SeeMaxCal_Click"/>
+        <Button Content="See min calories" Name="SeeMinCal" Margin="159,99,0,0" Height="50" Width="130" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Background="#FFECFF85" Click="SeeMinCal_Click"/>
+        <Button Content="See avg calories" Name="SeeAvgCal" Margin="301,99,0,0" Height="50" Width="130" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Background="#FFECFF85" Click="SeeAvgCal_Click"/>
+        <Button Content="See vegetable count" Name="SeeVegCount" Margin="10,175,0,0" Height="50" Width="130" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" Background="#FFECFF85" Click="SeeVegCount_Click"/>
+        <Button Content="See fruit count" Name="SeeFruitCount" Margin="159,175,0,0" Height="50" Width="130" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Background="#FFECFF85" Click="SeeFruitCount_Click"/>
+        <Button Content="See each color" Name="SeeEachColor" Margin="301,175,0,0" Height="50" Width="130" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Background="#FFECFF85" Click="SeeEachColor_Click"/>
+
 
     </Grid>
 </Page>

@@ -23,10 +23,10 @@
         <Image Source="https://img.icons8.com/plasticine/100/database.png"  HorizontalAlignment="Left" Height="74" Margin="169,12,0,0" VerticalAlignment="Top" Width="67"/>
         <Image Source="https://img.icons8.com/plasticine/100/database.png"  HorizontalAlignment="Left" Height="74" Margin="553,12,0,0" VerticalAlignment="Top" Width="67"/>
         <PasswordBox Name="Password" HorizontalAlignment="Center" Margin="0,293,0,0" VerticalAlignment="Top" Width="180" Height="36" FontSize="20"/>
+<Button Content="See table" HorizontalAlignment="Left" Margin="606,357,0,0" VerticalAlignment="Top" Background="#FFFFAA43" FontSize="20" Height="45" Width="112" FontWeight="Bold" Click="Button_Click"/>
 
         <Frame Name="MainFrame"></Frame>
-        <Button Content="See table" HorizontalAlignment="Left" Margin="606,357,0,0" VerticalAlignment="Top" Background="#FFFFAA43" FontSize="20" Height="45" Width="112" FontWeight="Bold" Click="Button_Click"/>
-
+        
 
     </Grid>
 </Window>

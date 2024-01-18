@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 using Microsoft.Data.SqlClient;
 
 #region DbCreation
-//string conStr = @"Data Source = STHQ012E-09; Database=master; TrustServerCertificate=true; Integrated Security = false; User Id = admin; Password = admin;";
+//string conStr = @"Data Source = DESKTOP-0LP9EBH; Initial Catalog = master; TrustServerCertificate=true; Integrated Security = true;";
 
 //using (SqlConnection connection = new SqlConnection(conStr))
 //{
@@ -28,8 +28,7 @@ using Microsoft.Data.SqlClient;
 //}
 
 
-//string conStr = @"Data Source = STHQ012E-09; Database=VegetablesFruits; TrustServerCertificate=true; Integrated Security = false; User Id = admin; Password = admin;";
-
+//string conStr = @"Data Source = DESKTOP-0LP9EBH; Initial Catalog = VegetablesFruits; TrustServerCertificate=true; Integrated Security = true;";
 
 //using (SqlConnection connection = new SqlConnection(conStr))
 //{
@@ -40,7 +39,8 @@ using Microsoft.Data.SqlClient;
 //    await command.ExecuteNonQueryAsync();
 //}
 
-//string conStr = @"Data Source = STHQ012E-09; Database=VegetablesFruits; TrustServerCertificate=true; Integrated Security = false; User Id = admin; Password = admin;";
+////string conStr = @"Data Source = STHQ012E-09; Database=VegetablesFruits; TrustServerCertificate=true; Integrated Security = false; User Id = admin; Password = admin;";
+//string conStr = @"Data Source = DESKTOP-0LP9EBH; Initial Catalog = VegetablesFruits; TrustServerCertificate=true; Integrated Security = true;";
 
 //using (SqlConnection connection = new SqlConnection(conStr))
 //{
@@ -48,7 +48,7 @@ using Microsoft.Data.SqlClient;
 //    SqlCommand command = new SqlCommand();
 //    command.CommandText = "INSERT INTO Products(Name, Types, Color, Calories) VALUES ('Tomato','Vegetable','Red',35)," +
 //                                                                         " ('Cucumber','Vegetable','Green',27)," +
-//                                                                        " ('Rastberry', 'Berry','Red',63),"+
+//                                                                        " ('Rastberry', 'Berry','Red',63)," +
 //                                                                        " ('Orange', 'Fruit','Orange',58)," +
 //                                                                        " ('Carrot', 'Vegetable','Orange',34)," +
 //                                                                        " ('Apple','Fruit' ,'Green',51)," +
@@ -63,7 +63,7 @@ using Microsoft.Data.SqlClient;
 //                                                                        " ('Pineapple', 'Fruit','Yellow',133)," +
 //                                                                        " ('Peach', 'Fruit','Red',101)";
 //    command.Connection = connection;
-
+//    await command.ExecuteNonQueryAsync();
 //}
 #endregion
 
@@ -142,32 +142,18 @@ namespace VegetablesFruits
             Password.Password = "";
         }
 
-        public async Task ShowAllButton_Click(object sender, RoutedEventArgs e)
-        {
-            string sqlQuery = $"SELECT * FROM Products";
-            string conStr = @"Data Source = STHQ012E-09; Database=VegetablesFruits; TrustServerCertificate=true; Integrated Security = false; User Id = admin; Password = admin;";
-            using (SqlConnection connection = new SqlConnection(conStr))
-            {
-                await connection.OpenAsync();
-                SqlCommand command = new SqlCommand(sqlQuery, connection);
-
-                SqlDataReader reader = await command.ExecuteReaderAsync();
-                if (reader.HasRows)
-                { 
-                }
-            }
-        }
+        
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (Username.Text == "admin" && Password.Password == "admin")
-            {
+            //if (Username.Text == "admin" && Password.Password == "admin")
+            //{
                 MainFrame.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                MessageBox.Show("Incorrect username or password!");
-            }
+            //}
+           // else
+           // {
+            //    MessageBox.Show("Incorrect username or password!");
+           // }
         }
     }
 }
