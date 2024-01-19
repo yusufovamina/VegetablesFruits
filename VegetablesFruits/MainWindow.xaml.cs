@@ -146,14 +146,14 @@ namespace VegetablesFruits
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //if (Username.Text == "admin" && Password.Password == "admin")
-            //{
+            if (Username.Text == "admin" && Password.Password == "admin" && StateLabel.Content == "Connected")
+            {
                 MainFrame.Visibility = Visibility.Visible;
-            //}
-           // else
-           // {
-            //    MessageBox.Show("Incorrect username or password!");
-           // }
+            }
+            else
+            {
+                MessageBox.Show("Incorrect username or password!");
+            }
         }
     }
 }

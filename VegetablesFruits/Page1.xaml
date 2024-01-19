@@ -19,6 +19,12 @@
         <Button Content="See vegetable count" Name="SeeVegCount" Margin="10,175,0,0" Height="50" Width="130" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" Background="#FFECFF85" Click="SeeVegCount_Click"/>
         <Button Content="See fruit count" Name="SeeFruitCount" Margin="159,175,0,0" Height="50" Width="130" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Background="#FFECFF85" Click="SeeFruitCount_Click"/>
         <Button Content="See each color" Name="SeeEachColor" Margin="301,175,0,0" Height="50" Width="130" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Background="#FFECFF85" Click="SeeEachColor_Click"/>
+        <ComboBox Name="ColorSelection" HorizontalAlignment="Left" Margin="10,250,0,0" VerticalAlignment="Top" Width="120" />
+        <Button Content="See by color" Name="SeeByColor" Margin="158,236,0,0" Height="50" Width="130" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Background="#FFECFF85" Click="SeeByColor_Click"/>
+        <TextBox Name="MaxCal" HorizontalAlignment="Left" Margin="119,322,0,0" TextWrapping="Wrap" Text="Max" VerticalAlignment="Top" Width="96"/>
+        <TextBox Name="MinCal" HorizontalAlignment="Left" Margin="10,322,0,0" TextWrapping="Wrap" Text="Min" VerticalAlignment="Top" Width="93"/>
+        <Button Content="See by calories" Name="SeeByCalories" Margin="236,308,0,0" Height="50" Width="130" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Background="#FFECFF85" Click="SeeByCalories_Click"/>
+        <Button Content="See red or yellow" Name="SeeRedOrYellow" Margin="10,357,0,0" Height="50" Width="130" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Background="#FFECFF85" Click="SeeRedOrYellow_Click"/>
 
 
     </Grid>

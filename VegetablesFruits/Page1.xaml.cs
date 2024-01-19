@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -23,15 +24,36 @@ namespace VegetablesFruits
         public Page1()
         {
             InitializeComponent();
-
+            Page1Load();
 
         }
 
+        public async Task Page1Load()
+        {
+            string conStr = @"Data Source = STHQ012E-09; Database=VegetablesFruits; TrustServerCertificate=true; Integrated Security = false; User Id = admin; Password = admin;";
+            string sqlQuery = "SELECT DISTINCT Color FROM Products";
+            DataTable dataTable = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(conStr))
+            {
+                await connection.OpenAsync();
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+
+                SqlDataReader reader = await command.ExecuteReaderAsync();
+                if (reader.HasRows)
+                {
+                    while(reader.Read())
+                    {
+                        ColorSelection.Items.Add(reader.GetString(0));
+                    }
+                }
+            }
+
+        }
         private async void FillDataGrid(string sqlQuery)
         {
 
-            string conStr = @"Data Source = DESKTOP-0LP9EBH; Initial Catalog = VegetablesFruits; TrustServerCertificate=true; Integrated Security = true;";
-
+            string conStr = @"Data Source = STHQ012E-09; Database=VegetablesFruits; TrustServerCertificate=true; Integrated Security = false; User Id = admin; Password = admin;";
             DataTable dataTable = await ExecuteSqlQueryAsync(sqlQuery, conStr);
 
 
@@ -112,18 +134,32 @@ namespace VegetablesFruits
 
             FillDataGrid(sqlQuery);
         }
-        //private void SeeVegCount_Click(object sender, RoutedEventArgs e)
-        //{
-        //    string sqlQuery = "SELECT COUNT(*) FROM Products WHERE Types = 'Vegetable'";
+        private void SeeByColor_Click(object sender, RoutedEventArgs e)
+        {
+            string sqlQuery = $"SELECT COUNT(*) FROM Products WHERE Color = '{ColorSelection.SelectedValue.ToString()}'";
 
-        //    FillDataGrid(sqlQuery);
-        //}
-        //private void SeeVegCount_Click(object sender, RoutedEventArgs e)
-        //{
-        //    string sqlQuery = "SELECT COUNT(*) FROM Products WHERE Types = 'Vegetable'";
+            FillDataGrid(sqlQuery);
+        }
+        private void SeeByCalories_Click(object sender, RoutedEventArgs e)
+        {
+            if(MinCal.Text=="Min" || MinCal.Text == "") {
+                MinCal.Text = "0";
+            }
+            else if (MaxCal.Text=="Max" || MinCal.Text == "")
+            {
+                MaxCal.Text = "2000";
+            }
+            string sqlQuery = $"SELECT Name, Calories FROM Products WHERE (Calories > {MinCal.Text} AND Calories < {MaxCal.Text})";
 
-        //    FillDataGrid(sqlQuery);
-        //}
+            FillDataGrid(sqlQuery);
+        }
+
+        private void SeeRedOrYellow_Click(object sender, RoutedEventArgs e)
+        {
+            string sqlQuery = $"SELECT * FROM Products WHERE Color = 'Yellow' OR Color='Red'";
+
+            FillDataGrid(sqlQuery);
+        }
 
     }
 }
